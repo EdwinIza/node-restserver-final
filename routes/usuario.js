@@ -4,6 +4,8 @@ const _ = require('underscore');
 const Usuario = require('../models/usuario');
 const app = express();
 
+
+//INGRESO DE PARAMETROS PARA USUARIO
 app.get('/usuario', function(req, res) {
 
     let desde = req.query.desde || 0;
@@ -33,6 +35,8 @@ app.get('/usuario', function(req, res) {
             });
         });
 });
+
+//INGRESO USUARIO
 
 app.post('/usuario', function(req, res) {
 
@@ -64,6 +68,7 @@ app.post('/usuario', function(req, res) {
 
 });
 
+//ACTUALIZACION USUARIO
 app.put('/usuario/:id', function(req, res) {
     let id = req.params.id
     let body = _.pick(req.body, ['nombre', 'email', 'img', 'role', 'estado']);
@@ -88,6 +93,7 @@ app.put('/usuario/:id', function(req, res) {
     });
 });
 
+//BORRAR UN USUARIO
 app.delete('/usuario/:id', function(req, res) {
     let id = req.params.id;
 

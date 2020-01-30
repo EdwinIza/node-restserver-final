@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-beautiful-unique-validation');
 
+
+//ESQUEMAS PAR ABASE DE DATOS
 let rolesValidos = {
     values: ['ADMIN_ROLE', "USER_ROLE"],
     message: '{VALUE} no es un rol válido'
